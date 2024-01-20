@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: blog
+spec:
+  template:
+    spec:
+      containers:
+        - image: kouxi08/astro-blog
+          ports:
+            - containerPort: 4321
