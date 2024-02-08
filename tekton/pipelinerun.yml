@@ -1,10 +1,10 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: clone-read-run-
+  generateName: clone-build-push-run-
 spec:
   pipelineRef:
-    name: clone-read
+    name: clone-build-push
   podTemplate:
     securityContext:
       fsGroup: 65532
@@ -20,7 +20,12 @@ spec:
   - name: git-credentials
     secret:
       secretName: git-credentials
+  - name: docker-credentials
+    secret:
+      secretName: docker-credentials
   params:
   - name: repo-url
     value: https://github.com/kouxi08/astro_blog
+  - name: image-reference
+    value: docker.io/kouxi00/astro-blog:latest
 
