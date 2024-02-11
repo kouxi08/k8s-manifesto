@@ -6,6 +6,6 @@ spec:
   template:
     spec:
       containers:
-        - image: kouxi08/astro-blog
+        - image: kouxi00/astro-blog
           ports:
             - containerPort: 4321

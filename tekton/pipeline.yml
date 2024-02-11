@@ -28,7 +28,6 @@ spec:
     params:
     - name: url
       value: $(params.repo-url)
-  
   - name: build-push
     runAfter: ["fetch-source"]
     taskRef:
