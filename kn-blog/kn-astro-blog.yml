@@ -7,5 +7,36 @@ spec:
     spec:
       containers:
         - image: kouxi00/astro-blog
+          env:
+          - name: MICROCMS_SERVICE_DOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: service-domain
+          - name: MICROCMS_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: api_key
+          - name: ENDPOINT
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: endpoint
+          - name: USE_SSL
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: use_ssl
+          - name: ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: access_key
+          - name: SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: blog-secret
+                key: secret_access_key
           ports:
             - containerPort: 4321
