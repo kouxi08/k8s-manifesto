@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    tty: true
+    command: ["/bin/sh"]
+    args: ["--dockerfile=/workspace/Dockerfile",
+            "--context=dir:///workspace",
+            "--no-push"]
+    env:
+    - name: XXXXX
+      value: "xxxx"
+    volumeMounts:
+      - name: dockerfile-storage
+        mountPath: /workspace
+  restartPolicy: Never
+  volumes:
+    - name: dockerfile-storage
+      persistentVolumeClaim:
+        claimName: local-claim
+  initContainers:
+  - name: init-gitclone
+    image: alpine/git:2.43.4
+    command: ['git','clone','https://github.com/kouxi08/Eploy-back.git', '/workspace']
+    volumeMounts:
+    - name: dockerfile-storage
+      mountPath: /workspace

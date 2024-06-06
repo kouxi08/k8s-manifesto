@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kaniko
+spec:
+  template:
+    metadata:
+      name: kaniko
+    spec:
+      containers:
+      - name: kaniko
+        image: gcr.io/kaniko-project/executor:latest
+        args: ["--dockerfile=/workspace/Dockerfile", "--context=dir:///workspace", "--no-push"]
+        volumeMounts:
+          - name: dockerfile-storage
+            mountPath: /kaniko/.docker
+      restartPolicy: Never
+      volumes:
+        - name: dockerfile-storage
+          persistentVolumeClaim:
+            claimName: sample-pvc
+     initContainers:
+     - name: init-gitclone
+       image: alpine/git:2.43.4
+       command: ['git','clone','https://github.com/kouxi08/Eploy-back.git', '/workspace']
+       volumeMounts:
+         - name: dockerfile-storage
+           mountPath: /workspace
+  backoffLimit: 0
+  #処理が終わった30秒後に削除する
+  ttlSecondsAfterFinished: 30
