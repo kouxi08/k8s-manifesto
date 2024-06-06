@@ -1,0 +1,35 @@
+apiVersion:  apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client-provisioner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: gcr.io/k8s-staging-sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: lab.kouxi.jp/nfs
+            - name: NFS_SERVER
+              value: xxx.xxx.xxx.xxx
+            - name: NFS_PATH
+              value: /export/nfs
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: xxx.xxx.xxx.xxx
+            path: /export/nfs
