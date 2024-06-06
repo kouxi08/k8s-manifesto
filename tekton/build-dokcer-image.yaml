@@ -1,0 +1,92 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: kaniko
+spec:
+  resources:
+    - name: builtImage
+      type: image
+
+params:
+- name: IMAGE
+  description: Name (reference) of the image to build.
+- name: DOCKERFILE
+  description: Path to the Dockerfile to build.
+  default: ./Dockerfile
+- name: CONTEXT
+  description: The build context used by Kaniko.
+  default: ./
+- name: EXTRA_ARGS
+  default: ""
+- name: BUILDER_IMAGE
+  description: The image on which builds will run
+  default: gcr.io/kaniko-project/executor@sha256:e36c9fa99279217c4bb8ee172819b441c3ca8ef946dc0e28b21721eefb2ba70a
+workspaces:
+- name: source
+results:
+- name: IMAGE-DIGEST
+  description: Digest of the image just built.
+
+steps:
+- name: build-and-push
+  image: gcr.io/kaniko-project/executor:latest
+  env:
+  - name: "DOCKER_CONFIG"
+    value: "/builder/home/.docker/"
+
+  - name: MICROCMS_SERVICE_DOMAIN
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: service-domain
+  - name: MICROCMS_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: api_key
+  - name: ENDPOINT
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: endpoint
+  - name: USE_SSL
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: use_ssl
+  - name: ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: access_key
+  - name: SECRET_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        name: blog-secret
+        key: secret_access_key
+
+  command:
+  - /kaniko/executor
+  - $(params.EXTRA_ARGS)
+  - --dockerfile=$(params.DOCKERFILE)
+  - --context=$(workspaces.source.path)/$(params.CONTEXT)  # The user does not need to care the workspace and the source.
+  - --destination=$(params.IMAGE)
+  - --oci-layout-path=$(workspaces.source.path)/$(params.CONTEXT)/image-digest
+
+  securityContext:
+    runAsUser: 0
+- name: write-digest
+  workingDir: $(workspaces.source.path)
+  image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.16.2
+  # output of imagedigestexport [{"key":"digest","value":"sha256:eed29..660","resourceRef":{"name":"myrepo/myimage"}}]
+  command: ["/ko-app/imagedigestexporter"]
+  args:
+  - -images=[{"name":"$(params.IMAGE)","type":"image","url":"$(params.IMAGE)","digest":"","OutputImageDir":"$(workspaces.source.path)/$(params.CONTEXT)/image-digest"}]
+  - -terminationMessagePath=$(params.CONTEXT)/image-digested
+  securityContext:
+    runAsUser: 0
+- name: digest-to-results
+  workingDir: $(workspaces.source.path)
+  image: docker.io/stedolan/jq@sha256:a61ed0bca213081b64be94c5e1b402ea58bc549f457c2682a86704dd55231e09
+  script: |
+    cat $(params.CONTEXT)/image-digested | jq '.[0].value' -rj | tee $(results.IMAGE-DIGEST.path)

@@ -39,4 +39,5 @@ spec:
       workspace: docker-credentials
     params:
     - name: IMAGE
-      value: $(params.image-refernce)
+      value: $(params.image-reference)
+    
