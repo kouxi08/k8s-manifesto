@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kn-kouxi-blog
+  name: test-app
   namespace: argocd
 
 spec:
