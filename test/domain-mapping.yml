@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: DomainMapping
+metadata:
+ name: blog.local.kouxi.jp
+ namespace: default
+spec:
+ ref:
+   name: test-app
+   kind: Service
+   apiVersion: serving.knative.dev/v1
