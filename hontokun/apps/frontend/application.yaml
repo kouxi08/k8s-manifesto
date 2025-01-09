@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hontokun-frontend
+  name: Hontokun-frontend
   namespace: argocd
 
 spec:
@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   sources:
     - chart: hontokun-backend
-      repoURL: https://kouxi08.github.io/hontokun-frontend/
+      repoURL: https://kouxi08.github.io/Hontokun-frontend/
       targetRevision: v1.0.0
   project: default
   syncPolicy:
