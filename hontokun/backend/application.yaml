@@ -9,9 +9,9 @@ spec:
     namespace: hontokun
     server: 'https://kubernetes.default.svc'
   sources:
-    - chart: hontokun-backend
-      repoURL: https://kouxi08.github.io/Hontokun-backend/
-      targetRevision: v1.0.0
+    repoURL: https://github.com/kouxi08/k8s-manifesto.git
+    path: hontokun/backend
+    targetRevision: main
   project: default
   syncPolicy:
     syncOptions:

@@ -1,0 +1,3 @@
+resources:
+  - ./backend/application.yaml
+  - ./frontend/application.yaml

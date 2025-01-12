@@ -9,7 +9,7 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: hontokun/apps
+    path: hontokun
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
     targetRevision: main
   project: default

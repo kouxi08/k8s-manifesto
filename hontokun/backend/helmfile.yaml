@@ -1,0 +1,12 @@
+bases:
+  - environments.yaml
+
+repositories:
+  - name: hontokun-backend
+    url: https://kouxi08.github.io/Hontokun-backend/
+
+releases:
+  - name: hontokun-backend
+    namespace: hontokun
+    chart: hontokun-backend
+    version: v1.0.0
