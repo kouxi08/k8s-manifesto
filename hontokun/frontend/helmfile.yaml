@@ -2,11 +2,11 @@ bases:
   - environments.yaml
 
 repositories:
-  - name: hontokun-backend
-    url: https://kouxi08.github.io/Hontokun-backend/
+  - name: hontokun-frontend
+    url: https://kouxi08.github.io/Hontokun-frontend/
 
 releases:
   - name: hontokun-frontend
     namespace: hontokun
-    chart: hontokun-frontend
+    chart: hontokun/hontokun
     version: v1.0.0
