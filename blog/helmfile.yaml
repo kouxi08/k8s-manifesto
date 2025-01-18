@@ -3,7 +3,7 @@ bases:
 
 repositories:
   - name: blog
-    url: https://kouxi08.github.io/Blog
+    url: https://kouxi08.github.io/Blog/
 
 releases:
   - name: blog
