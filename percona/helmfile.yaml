@@ -1,0 +1,16 @@
+bases:
+  - environments.yaml
+
+repositories:
+  - name: percona
+    url: https://percona.github.io/percona-helm-charts/
+
+releases:
+  - name: percona-operator
+    namespace: percona
+    chart: percona/pxc-operator
+    version: 2.5.0
+  - name: percona-db
+    namespace: percona
+    chart: percona/pxc-db
+    version: 1.16.1

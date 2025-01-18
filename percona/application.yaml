@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: percona-application
+  namespace: argocd
+
+spec:
+  destination:
+    namespace: percona
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: percona
+    repoURL: https://github.com/kouxi08/k8s-manifesto.git
+    targetRevision: main
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
