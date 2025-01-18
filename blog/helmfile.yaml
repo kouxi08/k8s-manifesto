@@ -1,0 +1,15 @@
+bases:
+  - environments.yaml
+
+repositories:
+  - name: blog
+    url: https://kouxi08.github.io/Blog
+
+releases:
+  - name: blog
+    namespace: blog
+    chart: kouxi-blog/kouxi-blog
+    version: 0.1.1
+    values:
+      - ./values.yaml
+

@@ -1,0 +1,3 @@
+ingress:
+  hosts:
+  - host: blog.kouxi.jp
