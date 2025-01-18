@@ -9,7 +9,7 @@ releases:
   - name: percona-operator
     namespace: percona
     chart: percona/pxc-operator
-    version: 2.5.0
+    version: 1.16.1
   - name: percona-db
     namespace: percona
     chart: percona/pxc-db
