@@ -2,12 +2,12 @@ bases:
   - environments.yaml
 
 repositories:
-  - name: prometheus
+  - name: prometheus-community
     url: https://prometheus-community.github.io/helm-charts
 
 releases:
   - name: prometheus
-    namespace: prometheus
+    namespace: prometheus-stack
     chart: prometheus-community/kube-prometheus-stack
     version: 68.2.1
     values:
