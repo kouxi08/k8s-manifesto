@@ -3,7 +3,7 @@ bases:
 
 repositories:
   - name: prometheus
-    url: https://prometheus-community.github.io/helm-chart
+    url: https://prometheus-community.github.io/helm-charts
 
 releases:
   - name: prometheus
