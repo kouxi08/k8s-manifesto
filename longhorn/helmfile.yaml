@@ -10,3 +10,5 @@ releases:
     namespace: longhorn-system
     chart: longhorn/longhorn
     version: 1.8.0
+    values:
+      - ./env/values.yaml
