@@ -1,6 +1,0 @@
-apiVersion: networking.internal.knative.dev/v1alpha1
-kind: ClusterDomainClaim
-metadata:
-  name: blog.local.kouxi.jp
-spec:
-  namespace: default
