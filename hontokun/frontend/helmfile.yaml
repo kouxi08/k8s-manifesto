@@ -8,5 +8,5 @@ repositories:
 releases:
   - name: hontokun-frontend
     namespace: hontokun
-    chart: hontokun/hontokun
+    chart: hontokun/hontokun-frontend
     version: 0.1.0
