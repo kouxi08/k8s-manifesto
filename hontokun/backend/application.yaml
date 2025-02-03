@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Hontokun-backend
+  name: hontokun-backend
   namespace: argocd
 
 spec:
