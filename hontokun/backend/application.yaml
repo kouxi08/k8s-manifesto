@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: hontokun
     server: 'https://kubernetes.default.svc'
-  sources:
+  source:
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
     path: hontokun/backend
     targetRevision: main
