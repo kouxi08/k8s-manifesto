@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
     path: hontokun/backend
     targetRevision: main
-  project: default
+  project: web-app
   syncPolicy:
     syncOptions:
         - CreateNamespace=true

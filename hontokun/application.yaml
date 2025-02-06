@@ -12,7 +12,7 @@ spec:
     path: hontokun
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
     targetRevision: main
-  project: default
+  project: web-app
   syncPolicy:
     automated:
       prune: true
