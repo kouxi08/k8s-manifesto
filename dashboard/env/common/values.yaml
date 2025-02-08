@@ -2,12 +2,12 @@ app:
   ingress:
     enabled: true
     hosts:
-      - dashbord.local.kouxi.jp
+      - dashboard.local.kouxi.jp
     ingressClassName: nginx
     tls:
       enabled: false
 
-kong:
-  proxy:
-    http:
-      enabled: true
+# kong:
+#   proxy:
+#     http:
+#       enabled: true
