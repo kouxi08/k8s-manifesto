@@ -1,0 +1,7 @@
+app:
+  ingress:
+    enabled: true
+    hosts: dashbord.local.kouxi.jp
+    ingressClassName: nginx
+    tls:
+      enabled: false
