@@ -9,4 +9,4 @@ releases:
   - name: hontokun-backend
     namespace: hontokun
     chart: hontokun-backend/hontokun-backend
-    version: 0.1.3
+    version: 0.1.4
