@@ -4,3 +4,10 @@ prometheus:
     hosts:
       - prometheus.local.kouxi.jp
     ingressClassName: nginx
+
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.local.kouxi.jp
+    ingressClassName: nginx
