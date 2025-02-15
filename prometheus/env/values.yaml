@@ -1,6 +1,5 @@
 prometheus:
-  service:
-    type: LoadBalancer
-alertmanager:
-  service:
-    type: LoadBalancer
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.local.kouxi.jp
