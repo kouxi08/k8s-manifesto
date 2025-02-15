@@ -1,10 +1,3 @@
-prometheus:
-  ingress:
-    enabled: true
-    hosts:
-      - prometheus.local.kouxi.jp
-    ingressClassName: nginx
-
 grafana:
   ingress:
     enabled: true
