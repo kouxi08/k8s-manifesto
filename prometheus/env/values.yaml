@@ -3,4 +3,4 @@ prometheus:
     enabled: true
     hosts:
       - prometheus.local.kouxi.jp
-   
+    ingressClassName: nginx
