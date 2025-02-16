@@ -1,2 +1,8 @@
 preUpgradeChecker:
   jobEnabled: false
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  host: longhorn.local.kouxi.jp
+  pathType: Prefix
