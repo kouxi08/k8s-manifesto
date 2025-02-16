@@ -4,3 +4,6 @@ ingress:
   path: /
   hosts:
     - blog.kouxi.jp
+
+autoscaling:
+  enabled: false
