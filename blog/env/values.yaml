@@ -3,3 +3,6 @@ ingress:
   ingressClassName: nginx
   hosts:
     - host: blog.kouxi.jp
+      paths:
+        path: /
+        pathType: Prefix
