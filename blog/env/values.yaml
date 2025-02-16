@@ -2,7 +2,4 @@ ingress:
   enabled: true
   ingressClassName: nginx
   hosts:
-    - host: blog.kouxi.jp
-      paths:
-        path: /
-        pathType: Prefix
+    - blog.kouxi.jp
