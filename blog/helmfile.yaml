@@ -11,5 +11,5 @@ releases:
     chart: blog/kouxi-blog
     version: 0.1.3
     values:
-      - ./values.yaml
+      - env/values.yaml
 

@@ -1,0 +1,5 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hosts:
+    - host: blog.kouxi.jp
