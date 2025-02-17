@@ -7,6 +7,4 @@ app:
     tls:
       enabled: false
 
-kong:
-  enabled: false
 
