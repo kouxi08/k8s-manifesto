@@ -1,10 +1,12 @@
 app:
-  ingress:
-    enabled: true
-    hosts:
-      - dashboard.local.kouxi.jp
-    ingressClassName: nginx
-    tls:
-      enabled: false
+  # ingress:
+  #   enabled: true
+  #   hosts:
+  #     - dashboard.local.kouxi.jp
+  #   ingressClassName: nginx
+  #   tls:
+  #     enabled: false
 
+  nginx:
+    enabled: true
 
