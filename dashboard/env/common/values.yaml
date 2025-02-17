@@ -7,7 +7,6 @@ app:
     tls:
       enabled: false
 
-# kong:
-#   proxy:
-#     http:
-#       enabled: true
+kong:
+  enabled: false
+
