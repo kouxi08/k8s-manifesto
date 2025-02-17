@@ -7,6 +7,6 @@ app:
   #   tls:
   #     enabled: false
 
-  nginx:
-    enabled: true
+nginx:
+  enabled: true
 
