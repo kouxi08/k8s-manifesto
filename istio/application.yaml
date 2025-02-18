@@ -2,15 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: istio-application
-  namespace: istio
+  namespace: argocd
 
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio
+    namespace: istio-system
   source:
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
-    path: istio
+    path: istio-system
     targetRevision: main
     plugin: {}
   project: default
