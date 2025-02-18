@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-application
+  namespace: istio
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio
+  source:
+    repoURL: https://github.com/kouxi08/k8s-manifesto.git
+    path: istio
+    targetRevision: main
+    plugin: {}
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

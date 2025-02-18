@@ -1,0 +1,12 @@
+bases:
+  - environments.yaml
+
+repositories:
+  - name: istio
+    url: https://istio-release.storage.googleapis.com/charts
+
+releases:
+  - name: istio
+    namespace: istio
+    chart: istio/gateway
+    version: 1.24.3
