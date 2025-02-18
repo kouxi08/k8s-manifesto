@@ -8,7 +8,7 @@ repositories:
 releases:
   - name: istio-base
     namespace: istio-system
-    chart: iistio/base
+    chart: istio/base
     version: 1.24.3
   - name: istio-istiod
     namespace: istio-system
