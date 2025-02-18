@@ -10,7 +10,7 @@ spec:
     namespace: istio-system
   source:
     repoURL: https://github.com/kouxi08/k8s-manifesto.git
-    path: istio-system
+    path: istio
     targetRevision: main
     plugin: {}
   project: default
