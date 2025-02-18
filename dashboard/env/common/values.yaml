@@ -7,6 +7,5 @@
   #   tls:
   #     enabled: false
 
-nginx:
-  enabled: true
-
+kong:
+  enabled: false
