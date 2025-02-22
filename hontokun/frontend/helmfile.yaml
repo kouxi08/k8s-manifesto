@@ -9,4 +9,4 @@ releases:
   - name: hontokun-frontend
     namespace: hontokun
     chart: hontokun-frontend/hontokun-frontend
-    version: 0.1.6
+    version: 0.1.7
