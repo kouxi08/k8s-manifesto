@@ -1,7 +1,2 @@
-app:
-  ingress:
-    enabled: true
-    hosts:
-    - dashboard.local.kouxi.jp
 kong:
   enabled: false
