@@ -12,5 +12,3 @@ releases:
     version: 7.10.5
     values:
       - env/common/values.yaml
-  - name: dashboard-istio
-    chart: ./local
