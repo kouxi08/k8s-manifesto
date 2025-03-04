@@ -17,4 +17,4 @@ releases:
   - name: istio-gateway
     namespace: istio-system
     chart: istio/gateway
-    version: 1.24.3
+    version: 1.25.0
