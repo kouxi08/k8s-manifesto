@@ -9,6 +9,6 @@ releases:
   - name: prometheus
     namespace: prometheus-stack
     chart: prometheus-community/kube-prometheus-stack
-    version: 69.3.2
+    version: 69.8.2
     values:
       - ./env/values.yaml
