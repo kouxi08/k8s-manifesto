@@ -9,7 +9,7 @@ releases:
   - name: blog
     namespace: blog
     chart: blog/kouxi-blog
-    version: 0.2.0
+    version: 0.2.1
     values:
       - env/values.yaml
 
