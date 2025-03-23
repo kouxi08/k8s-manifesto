@@ -13,6 +13,6 @@ releases:
   - name: percona-db
     namespace: percona
     chart: percona/pxc-db
-    version: 1.16.1
+    version: 1.16.2
     values:
       - env/values.yaml
