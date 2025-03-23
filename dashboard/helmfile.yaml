@@ -13,4 +13,4 @@ releases:
     values:
       - env/common/values.yaml
   - name: dashboard-istio
-    chart: ./local
+    chart: ./local 
