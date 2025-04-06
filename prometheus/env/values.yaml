@@ -4,3 +4,17 @@ grafana:
     hosts:
       - grafana.local.kouxi.jp
     ingressClassName: nginx
+
+alertmanager:
+  ingress:
+    enabled: true
+    hosts:
+      - alertmanager.local.kouxi.jp
+    ingressClassName: nginx
+
+prometheus:
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.local.kouxi.jp
+    ingressClassName: nginx
