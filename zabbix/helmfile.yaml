@@ -2,7 +2,7 @@ bases:
   - environments.yaml
 
 repositories:
-  - name: zabbix
+  - name: zabbix-community
     url: https://zabbix-community.github.io/helm-zabbix
 
 releases:
