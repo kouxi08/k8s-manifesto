@@ -10,3 +10,5 @@ releases:
     namespace: zabbix
     chart: zabbix-community/zabbix
     version: 7.1.0
+    values:
+      - env/values.yaml
