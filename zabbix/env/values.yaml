@@ -1,0 +1,5 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  host: zabbix.local.kouxi.jp
+  pathType: Prefix
