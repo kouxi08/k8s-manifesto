@@ -1,0 +1,12 @@
+bases:
+  - environments.yaml
+
+repositories:
+  - name: zabbix
+    url: https://zabbix-community.github.io/helm-zabbix
+
+releases:
+  - name: zabbix
+    namespace: zabbix
+    chart: zabbix-community/zabbix
+    version: 7.1.0
