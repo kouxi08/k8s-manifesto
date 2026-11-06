@@ -9,6 +9,6 @@ releases:
   - name: zabbix
     namespace: zabbix
     chart: zabbix-community/zabbix
-    version: 7.1.0
+    version: 8.0.0
     values:
       - env/values.yaml
